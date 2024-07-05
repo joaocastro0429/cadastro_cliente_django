@@ -1,7 +1,7 @@
 from django.shortcuts import render
 # from django.http  import HttpResponse
 from django.urls import reverse_lazy
-from django.views.generic import CreateView , ListView,UpdateView
+from django.views.generic import CreateView , ListView,UpdateView,DetailView
 from .models import Cliente
 # Create your views here.
 class clienteCreateView(CreateView):
@@ -14,6 +14,14 @@ class clienteCreateView(CreateView):
 class clienteListView(ListView):
     model=Cliente
     template_name="list_clientes.html"
+
+class clienteDetailView(DetailView):
+    model=Cliente
+    template_name="list_detail.html"
+    # renomeano o nome da variavel
+    context_object_name="cliente"
+
+
 
 class clienteListUpdateView(UpdateView):
     model=Cliente

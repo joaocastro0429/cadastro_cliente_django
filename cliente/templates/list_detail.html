@@ -9,15 +9,12 @@
     <title>Formulário de Clientes</title>
 </head>
 <body class="container">
-    <h1>Lista de cliente</h1>
-   {%for cliente in object_list%}
+    <h1>{{cliente.nome}}</h1>
      <li>{{cliente.nome}}</li>
      <li>{{cliente.data_nascimento}}</li>
      <li>{{cliente.email}}</li>
      <li>{{cliente.profissao}}</li>
-     <li><a href="{% url 'lista_cliente' pk=cliente.id %}">Exibir</a></li>
      <hr>
 
-   {%endfor%}
 </body>
 </html>
