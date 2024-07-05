@@ -1,5 +1,6 @@
 from django.shortcuts import render
 # from django.http  import HttpResponse
+from django.urls import reverse_lazy
 from django.views.generic import CreateView , ListView,UpdateView
 from .models import Cliente
 # Create your views here.
@@ -18,3 +19,5 @@ class clienteListUpdateView(UpdateView):
     model=Cliente
     fields=("nome","profissao","data_nascimento")
     template_name="form_clientes.html"
+    # direcionando para a listagem 
+    success_url=reverse_lazy("lista_clientes")
