@@ -6,21 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% bootstrap_css %}
 {% bootstrap_javascript %}
-    <title>Formulário de Clientes</title>
+    <title>Remover Clientes</title>
 </head>
 <body class="container">
-    <h1>Lista de cliente</h1>
-   {%for cliente in object_list%}
+    <h1>{{cliente.nome}}</h1>
      <li>{{cliente.nome}}</li>
      <li>{{cliente.data_nascimento}}</li>
      <li>{{cliente.email}}</li>
      <li>{{cliente.profissao}}</li>
-     <li><a href="{% url 'lista_cliente' pk=cliente.id %}">Exibir</a></li>
-     <li><a href="{% url 'editar_cliente' pk=cliente.id %}">Editar</a></li>
-     <li><a href="{% url 'remover_cliente' pk=cliente.id %}">Remover</a></li>
 
-     <hr>
+   
 
-   {%endfor%}
+   <form action="" method="post">
+    {% csrf_token %}
+
+    <input type="submit" class="btn btn-primary" value="Remover">
+</form>
 </body>
 </html>
